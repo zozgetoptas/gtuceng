@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h> // Required for sqrt() and pow()
+
+// Define PI as a macro as requested
+#define PI 3.14
+
+int main() {
+    // (a) Define the coordinates as integers
+    int x1 = 2,  y1 = 8;
+    int x2 = -4, y2 = 0;
+    int x3 = 10, y3 = 0;
+
+    // (b) Compute the coordinates of D (midpoint)
+    // Note: Division by 2.0 ensures the result is a double
+    double xD = (x2 + x3) / 2.0;
+    double yD = (y2 + y3) / 2.0;
+    
+    // Calculate differences first
+    double diffX = x1 - xD;
+    double diffY = y1 - yD;
+    
+    // (c) Compute the value of r (distance between A and D)
+    // Formula: sqrt( (x1 - xD)^2 + (y1 - yD)^2 )
+    // Calculate distance by squaring manually (diff * diff) instead of using pow()
+    double r = sqrt((diffX * diffX) + (diffY * diffY));
+    
+    
+    // (d) Compute the circumference of a circle of radius r
+    double C = 2 * PI * r;
+
+    // --- Outputting the results ---
+    printf("The Coordinates: A(%d,%d) B(%d,%d) C(%d,%d)\n\n", x1, y1, x2, y2, x3, y3);
+    printf("Coordinates of Midpoint D: (%.3f, %.3f)\n", xD, yD);
+    printf("Length of segment AD (r): %.3f\n", r);
+    printf("Circumference (C): %.3f\n", C);
+
+    return 0;
+}

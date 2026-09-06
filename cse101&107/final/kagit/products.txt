@@ -1,0 +1,4 @@
+1 pen 52.00
+8 notebook 28.75
+58 computer 19000.90
+4 hat 173.5

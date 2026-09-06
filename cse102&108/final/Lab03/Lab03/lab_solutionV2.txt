@@ -1,0 +1,119 @@
+#include <stdio.h>
+
+// Corrected function prototypes (no parameters)
+void drawSquare();
+void taylorSeries();
+
+int main() {
+    int choice;
+    
+    // DO-WHILE LOOP: Keeps the menu running until user chooses Exit
+    do {
+        printf("\n=============================\n");
+        printf("         MAIN MENU           \n");
+        printf("=============================\n"); 
+        printf("1. Square Drawing\n");
+        printf("2. Taylor Series Calculation Table\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            
+            case 1:
+                drawSquare();   // Function call for shape drawing
+                break;
+
+            case 2:
+                taylorSeries(); // Function call for Taylor series
+                break;
+
+            case 3:
+                printf("Exiting program. Goodbye!\n");
+                break;
+
+            default:
+                printf("Invalid choice! Please enter 1, 2, or 3.\n");
+        }
+
+    } while (choice != 3);
+
+    return 0;
+}
+
+// ==========================================
+// FUNCTION: drawSquare
+// Prompts user for number of rows and prints
+// a pattern of stars and dots.
+// ==========================================
+void drawSquare() {
+    int rows, r, s, d;
+
+    printf("\n--- Square Drawing ---\n");
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+    printf("\n");
+
+    // Outer Loop: Controls the rows
+    for (r = 0; r < rows; r++) {
+
+        // Inner Loop 1: Prints Stars (*)
+        // Number of stars decreases as row increases: (rows - r)
+        for (s = 0; s < (rows - r); s++) {
+            printf("*");
+        }
+
+        // Inner Loop 2: Prints Dots (.)
+        // Number of dots equals the current row index: (r)
+        for (d = 0; d < r; d++) {
+            printf(".");
+        }
+
+        // Move to next line
+        printf("\n");
+    }
+}
+
+// ==========================================
+// FUNCTION: taylorSeries
+// Computes e^x for x = 1 to x_limit using
+// the first N terms of the Taylor series.
+// ==========================================
+void taylorSeries() {
+    int x_limit, N, x, n, i;
+    double sum, power, factorial;
+
+    printf("\n--- Taylor Series Calculation ---\n");
+    printf("Enter max value for x: ");
+    scanf("%d", &x_limit);
+    printf("Enter number of terms (N): ");
+    scanf("%d", &N);
+
+    printf("\nResults:\n");
+
+    // Loop over x values
+    for (x = 1; x <= x_limit; x++) {
+
+        sum = 0.0; // Reset sum for current x
+
+        // Summation of terms from n = 0 to N-1
+        for (n = 0; n < N; n++) {
+
+            // --- Calculate x^n ---
+            power = 1.0;
+            for (i = 1; i <= n; i++) {
+                power *= x;
+            }
+
+            // --- Calculate n! ---
+            factorial = 1.0;
+            for (i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+
+            sum += power / factorial;
+        }
+
+        printf("x = %d | e^x = %.6f\n", x, sum);
+    }
+}

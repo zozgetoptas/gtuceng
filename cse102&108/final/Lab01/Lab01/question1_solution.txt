@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    // Declare the variables as integers as requested
+    int a, b, c, d, e;
+    double result;
+
+    // Prompt the user for input
+    printf("Enter five integers (a, b, c, d, e): ");
+    scanf("%d %d %d %d %d", &a, &b, &c, &d, &e);
+
+    // Optional: Check for division by zero based on the hints
+    if (e == 0 || c == -1) {
+        printf("Error: Invalid input. 'e' cannot be 0 and 'c' cannot be -1.\n");
+        return 1; // Exit the program with an error code
+    }
+
+    // Compute the expression
+    // Formula: (a^3 + 2b - cd) / e  +  (a + b) / (c + 1)  -  d / 2
+    
+    // IMPORTANT: We cast the numerators to (double) to force floating-point division.
+    // If we didn't do this, C would perform integer division and lose precision.
+    
+    // Term 1: (a^3 + 2b - (c * d)) / e
+    double term1 = (double)((a * a * a) + (2 * b) - (c * d)) / e;
+
+    // Term 2: (a + b) / (c + 1)
+    double term2 = (double)(a + b) / (c + 1);
+
+    // Term 3: d / 2
+    // We can simply use 2.0 to ensure it is treated as a double
+    double term3 = d / 2.0;
+
+    // Calculate final result
+    result = term1 + term2 - term3;
+    
+    printf("Integers: a=%d, b=%d, c=%d, d=%d, e=%d\n", a, b, c, d, e);
+
+    // Print the final value as a double
+    printf("Final value: %.4f\n", result);
+
+    return 0;
+}

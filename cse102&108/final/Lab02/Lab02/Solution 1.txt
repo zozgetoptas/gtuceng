@@ -1,0 +1,40 @@
+Part 1: Coordinate and Distance Analysis
+
+#include <stdio.h>
+#include <math.h>
+
+/* Function to calculate distance between two points (x1,y1) and (x2,y2) */
+double calculate_distance(double x1, double y1, double x2, double y2) {
+    /* Uses sqrt and pow from math.h as per Part 1 instructions */
+    return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+}
+
+int main(void) {
+    double xA, yA, xB, yB;
+    double distA, distB;
+
+    /* Driver logic: Scanning data from the user */
+    printf("Enter coordinates for Point A (x y): ");
+    scanf("%lf %lf", &xA, &yA);
+    printf("Enter coordinates for Point B (x y): ");
+    scanf("%lf %lf", &xB, &yB);
+
+    /* First call: Distance of A from origin (0,0) */
+    distA = calculate_distance(xA, yA, 0.0, 0.0);
+    
+    /* Second call: Distance of B from origin (0,0) */
+    distB = calculate_distance(xB, yB, 0.0, 0.0);
+
+    printf("Distance A: %.2f, Distance B: %.2f\n", distA, distB);
+
+    /* Selection logic to determine the further point */
+    if (distA > distB) {
+        printf("Result: Point A is further from the origin.\n");
+    } else if (distB > distA) {
+        printf("Result: Point B is further from the origin.\n");
+    } else {
+        printf("Result: Both points are at the same distance.\n");
+    }
+
+    return 0;
+}

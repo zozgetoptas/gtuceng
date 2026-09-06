@@ -1,0 +1,7 @@
+lipstick 1400 50
+pen 100 120
+phone 60000 453
+water 5 784512
+computer 70000 456
+notebook 150 12
+necklace 800 2

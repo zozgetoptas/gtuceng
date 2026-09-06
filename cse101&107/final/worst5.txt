@@ -1,0 +1,5 @@
+enes 14
+ali 20
+ege 23
+aysu 40
+yusuf 55
