@@ -26,6 +26,12 @@ C programlama ve veri yapılarıyla ilgili ders çalışmaları:
 - `labs/` - Lab work / Laboratuvar çalışmaları
 - `quizzes/` - Quiz solutions / Quiz çözümleri
 
+### `eng151&152`
+
+
+- `152questions.pdf` - Example questions to study / Çalışmak için örnek sorular
+- `science&technology.pdf` - Notes / Notlar
+
 For programs that read input files, make sure the required `.txt` files are in the program's working directory.
 Dosya girişi kullanan programlarda, ilgili `.txt` dosyalarının programın çalıştırıldığı dizinde bulunduğundan emin olun.
 
