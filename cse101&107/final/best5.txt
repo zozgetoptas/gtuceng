@@ -1,5 +1,0 @@
-ozge 100
-ahmet 99
-semri 95
-feraye 90
-poyraz 88

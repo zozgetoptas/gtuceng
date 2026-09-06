@@ -7,6 +7,7 @@ int out(int *arr)
     int low, great;
     low = arr[0];
     great = arr[0];
+    
     int i = 1;
     while(i < 20)
     {
