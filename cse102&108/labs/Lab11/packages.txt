@@ -1,0 +1,4 @@
+gcc
+make gcc
+cmake make
+valgrind gcc make
